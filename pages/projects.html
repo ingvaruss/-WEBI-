@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты - Digital Universe</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/cards.css">
+</head>
+<body>
+    <div class="digital-universe">
+        <div class="layer code-background" data-depth="0.1"></div>
+        <div class="layer main-content" data-depth="1.0">
+            <header class="digital-header">
+                <div class="logo">{"{ DEV }"}</div>
+                <nav class="digital-nav">
+                    <a href="../index.html" class="nav-link">Главная</a>
+                    <a href="about.html" class="nav-link">О нас</a>
+                    <a href="projects.html" class="nav-link active">Проекты</a>
+                    <a href="contact.html" class="nav-link">Контакты</a>
+                </nav>
+            </header>
+
+            <main class="hero-section">
+                <h1 class="digital-title">
+                    <span class="title-line">Наши</span>
+                    <span class="title-line accent">проекты</span>
+                </h1>
+
+                <div class="cards-container">
+                    <div class="flip-card" onclick="flipCard(this)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-icon">🌐</div>
+                                <h3>E-commerce Platform</h3>
+                                <p>Масштабируемая платформа</p>
+                                <div class="card-hint">Нажмите для деталей</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Детали проекта</h3>
+                                <ul>
+                                    <li>React + Node.js</li>
+                                    <li>Монолитная архитектура</li>
+                                    <li>Интеграция с платежами</li>
+                                    <li>Real-time уведомления</li>
+                                </ul>
+                                <div class="card-stats">
+                                    <span>6 месяцев</span>
+                                    <span>500k пользователей</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" onclick="flipCard(this)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-icon">📱</div>
+                                <h3>Fitness App</h3>
+                                <p>Мобильное приложение</p>
+                                <div class="card-hint">Нажмите для деталей</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Детали проекта</h3>
+                                <ul>
+                                    <li>React Native</li>
+                                    <li>Firebase Backend</li>
+                                    <li>HealthKit интеграция</li>
+                                    <li>Социальные функции</li>
+                                </ul>
+                                <div class="card-stats">
+                                    <span>4 месяца</span>
+                                    <span>50k+ скачиваний</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" onclick="flipCard(this)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-icon">🤖</div>
+                                <h3>AI Chat Assistant</h3>
+                                <p>Интеллектуальный помощник</p>
+                                <div class="card-hint">Нажмите для деталей</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Детали проекта</h3>
+                                <ul>
+                                    <li>Python + TensorFlow</li>
+                                    <li>NLP обработка</li>
+                                    <li>Multi-language support</li>
+                                    <li>API интеграции</li>
+                                </ul>
+                                <div class="card-stats">
+                                    <span>8 месяцев</span>
+                                    <span>90% точность</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="../js/parallax.js"></script>
+    <script src="../js/cards.js"></script>
+</body>
+</html>

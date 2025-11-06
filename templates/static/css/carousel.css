@@ -1,0 +1,80 @@
+.carousel-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.simple-carousel {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    flex-direction: column;
+}
+
+.slide-1 { background: linear-gradient(45deg, #ff6b6b, #4ecdc4); }
+.slide-2 { background: linear-gradient(45deg, #45aaf2, #a55eea); }
+.slide-3 { background: linear-gradient(45deg, #26de81, #fed330); }
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.9);
+    color: black;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: white;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    border: none;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background: white;
+}

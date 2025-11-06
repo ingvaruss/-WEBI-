@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Анимированный фон с частицами -->
+<div id="particles-container" class="particles-container"></div>
+<div class="particles-overlay"></div>
+
+<!-- Компактная цитата Маска -->
+<div class="musk-quote-compact">
+    <div class="quote-icon-compact">💡</div>
+    <div class="quote-content-compact">
+        <div class="quote-text-compact">
+            "ИИ - фундаментальный риск для цивилизации, но и величайшая возможность для прогресса."
+        </div>
+        <div class="quote-author-compact">— Илон Маск</div>
+    </div>
+</div>
+
+<section class="hero">
+    <div class="container">
+        <div class="avatar-3d">🚀</div>
+        <h1 class="text-3d">Digital Evolution</h1>
+        <p class="hero-subtitle">Превращаем идеи в цифровую реальность</p>
+        <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+            Создаем инновационные веб-решения, которые меняют будущее. От концепции до реализации - каждая деталь имеет значение.
+        </p>
+        
+        <div style="margin-top: 2rem;">
+            <a href="{{ url_for('projects') }}" class="btn" style="position: relative; z-index: 10;">Наши проекты</a>
+            <a href="{{ url_for('contact') }}" class="btn" style="background: transparent; border: 2px solid white; margin-left: 1rem; position: relative; z-index: 10;">Начать сотрудничество</a>
+        </div>
+    </div>
+</section>
+
+<!-- Секция с каруселью навыков -->
+<section class="section" style="background: rgba(248, 250, 252, 0.95); position: relative; z-index: 2; padding: 80px 0;">
+    <div class="container">
+        <h2 class="section-title">Технологии будущего</h2>
+        
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="skills-carousel" id="skillsCarousel">
+                    {% for skill in data.skills %}
+                    <div class="skill-card" data-skill="{{ skill }}">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="skill-icon">
+                                    {% if skill == "Python" %}
+                                    🐍
+                                    {% elif skill == "Flask" %}
+                                    🌶️
+                                    {% elif skill == "HTML/CSS" %}
+                                    🎨
+                                    {% elif skill == "JavaScript" %}
+                                    ⚡
+                                    {% elif skill == "Git" %}
+                                    📚
+                                    {% elif skill == "SQL" %}
+                                    🗃️
+                                    {% elif skill == "Django" %}
+                                    🎸
+                                    {% else %}
+                                    💻
+                                    {% endif %}
+                                </div>
+                                <h3>{{ skill }}</h3>
+                                <p>Нажмите для просмотра кода</p>
+                            </div>
+                            <div class="card-back">
+                                <div class="code-container">
+                                    <pre><code class="language-{{ skill.lower() }}" id="code-{{ loop.index0 }}">// Загрузка кода...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="carousel-hint">
+            💡 <strong>Как использовать:</strong> Перетащите для вращения • Активная карточка увеличивается автоматически • Кликните для просмотра кода
+        </div>
+    </div>
+</section>
+
+<!-- Секция преимуществ -->
+<section class="section" style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(234, 88, 12, 0.8) 100%); color: white; position: relative; z-index: 2;">
+    <div class="container">
+        <h2 class="section-title" style="color: white;">Почему выбирают нас</h2>
+        <div class="skills-grid">
+            <div class="skill-card-3d" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">
+                <h3>🚀 Инновации</h3>
+                <p>Используем самые современные технологии и подходы</p>
+            </div>
+            <div class="skill-card-3d" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">
+                <h3>💡 Качество</h3>
+                <p>Чистый, поддерживаемый и документированный код</p>
+            </div>
+            <div class="skill-card-3d" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">
+                <h3>🔧 Надежность</h3>
+                <p>Стабильная работа и тщательное тестирование</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Подключаем стили и скрипты карусели -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/carousel.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/colors.css') }}">
+<script src="{{ url_for('static', filename='js/carousel.js') }}"></script>
+<script src="{{ url_for('static', filename='js/carousel-data.js') }}"></script>
+{% endblock %}

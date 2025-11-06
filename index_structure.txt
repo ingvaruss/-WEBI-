@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBI (Web и Business)</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cards.css">
+</head>
+<body>
+    <div class="digital-universe">
+        <div class="layer code-background" data-depth="0.1"></div>
+        <div class="layer main-content" data-depth="1.0">
+            <header class="digital-header">
+                <div class="logo">{"{ WEBI }"}</div>
+                <nav class="digital-nav">
+                    <a href="index.html" class="nav-link active">Главная</a>
+                    <a href="pages/about.html" class="nav-link">О нас</a>
+                    <a href="pages/projects.html" class="nav-link">Проекты</a>
+                    <a href="pages/contact.html" class="nav-link">Контакты</a>
+                </nav>
+            </header>
+
+            <main class="hero-section">
+                <h1 class="digital-title">
+                    <span class="title-line">Цифровые</span>
+                    <span class="title-line accent">решения</span>
+                    <span class="title-line">будущего</span>
+                </h1>
+                
+                <!-- Интерактивные карточки -->
+                <div class="cards-container">
+                    <div class="flip-card" onclick="flipCard(this)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-icon">🚀</div>
+                                <h3>Веб-разработка</h3>
+                                <p>Современные веб-приложения</p>
+                                <div class="card-hint">Нажмите для деталей</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Технологии</h3>
+                                <ul>
+                                    <li>React/Vue.js</li>
+                                    <li>Node.js/Python</li>
+                                    <li>MongoDB/PostgreSQL</li>
+                                    <li>Docker/Kubernetes</li>
+                                </ul>
+                                <div class="card-stats">
+                                    <span>50+ проектов</span>

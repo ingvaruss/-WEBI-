@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Universe - IT Solutions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
+</head>
+<body>
+    <!-- Вертикальный матричный дождь с параллаксом -->
+    <div class="matrix-bg"></div>
+    <div class="code-background"></div>
+    
+    <!-- УБРАН КАСТОМНЫЙ КУРСОР -->
+    
+    <div class="digital-universe">
+        <!-- Статичное меню -->
+        <header class="digital-header">
+            <div class="logo" onclick="animateLogo()">
+                { DEV }
+            </div>
+            <nav class="digital-nav">
+                <a href="{{ url_for('index') }}" class="nav-link active">Главная</a>
+                <a href="{{ url_for('about') }}" class="nav-link">О нас</a>
+                <a href="{{ url_for('projects') }}" class="nav-link">Проекты</a>
+                <a href="{{ url_for('contact') }}" class="nav-link">Контакты</a>
+            </nav>
+        </header>
+
+        <!-- Основной контент с легким параллаксом -->
+        <div class="main-content">
+            <main class="hero-section">
+                <div class="hero-content">
+                    <h1 class="digital-title">
+                        <span class="title-line">Цифровые</span>
+                        <span class="title-line accent">решения</span>
+                        <span class="title-line">будущего</span>
+                    </h1>
+                    <p class="digital-subtitle">
+                        Превращаем сложные технологические вызовы в элегантные и эффективные digital-продукты
+                    </p>
+                    
+                    <!-- Карточки с легким параллаксом -->
+                    <div class="cards-container">
+                        <div class="flip-card" onclick="flipCard(this)">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="card-icon">🚀</div>
+                                    <h3>Web Development</h3>
+                                    <p>Современные веб-приложения и платформы</p>
+                                    <div class="card-tech">
+                                        <span>React</span>
+                                        <span>Vue</span>
+                                        <span>Node.js</span>
+                                    </div>
+                                    <div class="card-hint">Click for details</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Web Technologies</h3>
+                                    <div class="tech-details">
+                                        <div class="tech-item">
+                                            <span class="tech-name">Frontend</span>
+                                            <span class="tech-stack">React, Vue, Angular</span>
+                                        </div>
+                                        <div class="tech-item">
+                                            <span class="tech-name">Backend</span>
+                                            <span class="tech-stack">Node.js, Python, PHP</span>
+                                        </div>
+                                        <div class="tech-item">
+                                            <span class="tech-name">Database</span>
+                                            <span class="tech-stack">MongoDB, PostgreSQL</span>
+                                        </div>
+                                        <div class="tech-item">
+                                            <span class="tech-name">DevOps</span>
+                                            <span class="tech-stack">Docker, AWS, CI/CD</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-stats">
+                                        <div class="stat">
+                                            <span class="stat-number">150+</span>
+                                            <span class="stat-label">Projects</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-number">98%</span>
+                                            <span class="stat-label">Success</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flip-card" onclick="flipCard(this)">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="card-icon">📱</div>
+                                    <h3>Mobile Apps</h3>
+                                    <p>Нативные и кроссплатформенные приложения</p>
+                                    <div class="card-tech">
+                                        <span>React Native</span>
+                                        <span>Flutter</span>
+                                        <span>Swift</span>
+                                    </div>
+                                    <div class="card-hint">Click for details</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Mobile Stack</h3>
+                                    <div class="tech-details">
+                                        <div class="tech-item">
+                                            <span class="tech-name">iOS</span>
+                                            <span class="tech-stack">Swift, Objective-C</span>
+                                        </div>
+                                        <div class="tech-item">
+                                            <span class="tech-name">Android</span>
+                                            <span class="tech-stack">Kotlin, Java</span>
+                                        </div>
+                                        <div class="tech-item">
+                                            <span class="tech-name">Cross-platform</span>
+                                            <span class="tech-stack">React Native, Flutter</span>
+                                        </div>
+                                        <div class="tech-item">
+                                            <span class="tech-name">Backend</span>
+                                            <span class="tech-stack">Firebase, Node.js</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-stats">
+                                        <div class="stat">
+                                            <span class="stat-number">80+</span>
+                                            <span class="stat-label">Apps</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-number">4.8★</span>
+                                            <span class="stat-label">Rating</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flip-card" onclick="flipCard(this)">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="card-icon">🤖</div>
+                                    <h3>AI & ML</h3>
+                                    <p>Искусственный интеллект и машинное обучение</p>
+                                    <div class="card-tech">
+                                        <span>Python</span>
+                                        <span>TensorFlow</span>
+                                        <span>PyTorch</span>
+                                    </div>
+                                    <div class="card-hint">Click for details</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>AI Technologies</h3>
+                                    <div class="tech-details">
+                                        <div class="tech-item">
+                                            <span class="tech-name">ML Frameworks</span>
+                                            <span class="tech-stack">TensorFlow, PyTorch</span>
+                                        </div>
+                                        <div class="tech-item">
+                                            <span class="tech-name">Computer Vision</span>
+                                            <span class="tech-stack">OpenCV, YOLO</span>
+                                        </div>
+                                        <div class="tech-item">
+                                            <span class="tech-name">NLP</span>
+                                            <span class="tech-stack">BERT, GPT, spaCy</span>
+                                        </div>
+                                        <div class="tech-item">
+                                            <span class="tech-name">Data Science</span>
+                                            <span class="tech-stack">Pandas, NumPy, SciKit</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-stats">
+                                        <div class="stat">
+                                            <span class="stat-number">45+</span>
+                                            <span class="stat-label">AI Models</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-number">96%</span>
+                                            <span class="stat-label">Accuracy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- ПОДКЛЮЧАЕМ СКРИПТЫ -->
+    <script src="{{ url_for('static', filename='js/matrix.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/parallax.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cards.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+</body>
+</html>

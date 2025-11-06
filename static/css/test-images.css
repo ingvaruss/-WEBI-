@@ -1,0 +1,12 @@
+.carousel-slide:nth-child(1) { background: linear-gradient(45deg, #ff6b6b, #4ecdc4); }
+.carousel-slide:nth-child(2) { background: linear-gradient(45deg, #45aaf2, #a55eea); }
+.carousel-slide:nth-child(3) { background: linear-gradient(45deg, #26de81, #fed330); }
+
+.carousel-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}

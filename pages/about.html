@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Digital Universe</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/cards.css">
+</head>
+<body>
+    <div class="digital-universe">
+        <div class="layer code-background" data-depth="0.1"></div>
+        <div class="layer main-content" data-depth="1.0">
+            <header class="digital-header">
+                <div class="logo">{"{ DEV }"}</div>
+                <nav class="digital-nav">
+                    <a href="../index.html" class="nav-link">Главная</a>
+                    <a href="about.html" class="nav-link active">О нас</a>
+                    <a href="projects.html" class="nav-link">Проекты</a>
+                    <a href="contact.html" class="nav-link">Контакты</a>
+                </nav>
+            </header>
+
+            <main class="hero-section">
+                <h1 class="digital-title">
+                    <span class="title-line">Наша</span>
+                    <span class="title-line accent">команда</span>
+                </h1>
+
+                <div class="cards-container">
+                    <!-- Карточка команды -->
+                    <div class="flip-card" onclick="flipCard(this)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-icon">👨‍💻</div>
+                                <h3>Frontend Team</h3>
+                                <p>Создаём интерфейсы будущего</p>
+                                <div class="card-hint">Нажмите для деталей</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Frontend Отдел</h3>
+                                <ul>
+                                    <li>15 разработчиков</li>
+                                    <li>React/Vue.js эксперты</li>
+                                    <li>UI/UX дизайн</li>
+                                    <li>PWA разработка</li>
+                                </ul>
+                                <div class="card-stats">
+                                    <span>100+ проектов</span>
+                                    <span>5 лет опыта</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" onclick="flipCard(this)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-icon">⚙️</div>
+                                <h3>Backend Team</h3>
+                                <p>Мощные серверные решения</p>
+                                <div class="card-hint">Нажмите для деталей</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Backend Отдел</h3>
+                                <ul>
+                                    <li>12 инженеров</li>
+                                    <li>Node.js/Python/Django</li>
+                                    <li>Базы данных</li>
+                                    <li>API разработка</li>
+                                </ul>
+                                <div class="card-stats">
+                                    <span>80+ API</span>
+                                    <span>99.9% uptime</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" onclick="flipCard(this)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-icon">📊</div>
+                                <h3>Data Science</h3>
+                                <p>Аналитика и машинное обучение</p>
+                                <div class="card-hint">Нажмите для деталей</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Data Science Отдел</h3>
+                                <ul>
+                                    <li>8 data scientist'ов</li>
+                                    <li>AI/ML разработка</li>
+                                    <li>Big Data аналитика</li>
+                                    <li>Прогнозные модели</li>
+                                </ul>
+                                <div class="card-stats">
+                                    <span>25+ AI моделей</span>
+                                    <span>95% точность</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="../js/parallax.js"></script>
+    <script src="../js/cards.js"></script>
+</body>
+</html>

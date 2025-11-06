@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Digital Universe</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/cards.css">
+</head>
+<body>
+    <div class="digital-universe">
+        <div class="layer code-background" data-depth="0.1"></div>
+        <div class="layer main-content" data-depth="1.0">
+            <header class="digital-header">
+                <div class="logo">{"{ DEV }"}</div>
+                <nav class="digital-nav">
+                    <a href="../index.html" class="nav-link">Главная</a>
+                    <a href="about.html" class="nav-link">О нас</a>
+                    <a href="projects.html" class="nav-link">Проекты</a>
+                    <a href="contact.html" class="nav-link active">Контакты</a>
+                </nav>
+            </header>
+
+            <main class="hero-section">
+                <h1 class="digital-title">
+                    <span class="title-line">Свяжитесь</span>
+                    <span class="title-line accent">с нами</span>
+                </h1>
+
+                <div class="cards-container">
+                    <div class="flip-card" onclick="flipCard(this)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-icon">📧</div>
+                                <h3>Email</h3>
+                                <p>Пишите нам в любое время</p>
+                                <div class="card-hint">Нажмите для деталей</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Email Контакты</h3>
+                                <ul>
+                                    <li>hello@digitaluniverse.dev</li>
+                                    <li>projects@digitaluniverse.dev</li>
+                                    <li>careers@digitaluniverse.dev</li>
+                                    <li>support@digitaluniverse.dev</li>
+                                </ul>
+                                <div class="card-stats">
+                                    <span>Ответ за 24ч</span>
+                                    <span>Поддержка 24/7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" onclick="flipCard(this)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-icon">📞</div>
+                                <h3>Телефон</h3>
+                                <p>Звоните для консультации</p>
+                                <div class="card-hint">Нажмите для деталей</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Телефонные номера</h3>
+                                <ul>
+                                    <li>+7 (999) 123-45-67</li>
+                                    <li>+7 (495) 123-45-67</li>
+                                    <li>Техподдержка: 8800</li>
+                                    <li>Факс: +7 (495) 123-45-68</li>
+                                </ul>
+                                <div class="card-stats">
+                                    <span>Пн-Пт 9:00-18:00</span>
+                                    <span>24/7 экстренная</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" onclick="flipCard(this)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-icon">🏢</div>
+                                <h3>Офис</h3>
+                                <p>Посетите наш офис</p>
+                                <div class="card-hint">Нажмите для деталей</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Адреса офисов</h3>
+                                <ul>
+                                    <li>Москва, ул. Тверская, 1</li>
+                                    <li>Санкт-Петербург, Невский пр., 10</li>
+                                    <li>Казань, ул. Баумана, 5</li>
+                                    <li>Новосибирск, Красный пр., 20</li>
+                                </ul>
+                                <div class="card-stats">
+                                    <span>10:00-19:00</span>
+                                    <span>Предварительная запись</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="../js/parallax.js"></script>
+    <script src="../js/cards.js"></script>
+</body>
+</html>

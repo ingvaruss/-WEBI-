@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Evolution - {{ data.title }}</title>
+    
+    <!-- Основные CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/colors.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/carousel.css') }}">
+    
+    <!-- Условная загрузка CSS -->
+    {% if request.path == url_for('index') %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/particles.css') }}">
+    {% endif %}
+    
+    {% if request.path == url_for('projects') %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+    {% endif %}
+    
+    {% if request.path == url_for('contact') %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contacts.css') }}">
+    {% endif %}
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="{{ url_for('index') }}" class="nav-logo">{{ data.name }}</a>
+                <ul class="nav-menu">
+                    <li><a href="{{ url_for('index') }}">Главная</a></li>
+                    <li><a href="{{ url_for('about') }}">Обо мне</a></li>
+                    <li><a href="{{ url_for('projects') }}">Проекты</a></li>
+                    <li><a href="{{ url_for('contact') }}">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 {{ data.name }}. Все права защищены.</p>
+            <p>"Когда что-то достаточно важно, вы делаете это, даже если шансы не в вашу пользу." - Илон Маск</p>
+        </div>
+    </footer>
+
+    <!-- Основные JavaScript -->
+    <script src="{{ url_for('static', filename='js/carousel.js') }}"></script>
+    
+    <!-- Условная загрузка JavaScript -->
+    {% if request.path == url_for('index') %}
+    <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/carousel-data.js') }}"></script>
+    {% endif %}
+    
+    {% if request.path == url_for('projects') %}
+    <script src="{{ url_for('static', filename='js/projects.js') }}"></script>
+    {% endif %}
+</body>
+</html>
