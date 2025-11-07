@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEBI future</title>
+    <title>Петров Руслан future</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
 </head>
@@ -33,8 +33,9 @@
             <main class="hero-section">
                 <div class="hero-content">
                     <h1 class="digital-title">
-                        <span class="title-line neon-orange">WEBI future</span>
-                        <span class="title-line accent">Цифровые решения для вашего бизнеса</span>
+                        <span class="title-line">WEBI future</span>
+                        <span class="title-line accent">Цифровые решения</span>
+                        <span class="title-line">для вашего бизнеса</span>
                     </h1>
                     <p class="digital-subtitle">
                         Превращаем сложные технологические вызовы в элегантные и эффективные digital-продукты
