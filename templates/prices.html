@@ -3,59 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Цены - ВЕБ-СТУДИЯ "WEBi"</title>
-    <link rel="stylesheet" href="../static/css/main.css">
+    <title>Отзывы - WEBI-future</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
+    <div class="matrix-bg"></div>
+    <div class="code-background"></div>
+    
     <div class="digital-universe">
-        <div class="layer code-background" data-depth="0.1"></div>
-        <div class="layer main-content" data-depth="1.0">
-            <header class="digital-header">
-                <div class="logo">{"{ WEBI }"}</div>
-                <nav class="digital-nav">
-                    <a href="../index.html" class="nav-link">Главная</a>
-                    <a href="about.html" class="nav-link">Услуги</a>
-                    <a href="projects.html" class="nav-link">Портфолио</a>
-                    <a href="prices.html" class="nav-link active">Цены</a>
-                    <a href="reviews.html" class="nav-link">Отзывы</a>
-                    <a href="contact.html" class="nav-link">Контакты</a>
-                </nav>
-            </header>
+        <header class="digital-header">
+            <div class="logo" onclick="animateLogo()">
+                Петров Руслан
+            </div>
+            <nav class="digital-nav">
+                <a href="{{ url_for('index') }}" class="nav-link">Главная</a>
+                <a href="{{ url_for('about') }}" class="nav-link">О нас</a>
+                <a href="{{ url_for('projects') }}" class="nav-link">Проекты</a>
+                <a href="{{ url_for('contact') }}" class="nav-link">Контакты</a>
+            </nav>
 
+            <!-- Гамбургер-меню для мобильных -->
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="{{ url_for('index') }}" class="mobile-nav-link">Главная</a>
+                <a href="{{ url_for('about') }}" class="mobile-nav-link">О нас</a>
+                <a href="{{ url_for('projects') }}" class="mobile-nav-link">Проекты</a>
+                <a href="{{ url_for('contact') }}" class="mobile-nav-link">Контакты</a>
+            </div>
+        </header>
+
+        <div class="main-content">
             <main class="hero-section">
-                <h1 class="digital-title">
-                    <span class="title-line accent">Прозрачные цены</span>
-                    
-                    
-                </h1>
-                
-                <div class="pricing-container">
-                    <div class="price-card">
-                        <h3>БАЗОВЫЙ</h3>
-                        <div class="price">15 000 руб.</div>
-                        <ul>
-                            <li>Готовый шаблон "Сайт-Локаль"</li>
-                            <li>7 основных блоков</li>
-                            <li>Наполнение вашим контентом</li>
-                            <li>Домен и хостинг на 1 год</li>
-                        </ul>
-                        <button class="cta-button">Выбрать</button>
-                    </div>
-                    
-                    <div class="price-card featured">
-                        <h3>ПРОФ</h3>
-                        <div class="price">25 000 руб.</div>
-                        <ul>
-                            <li>Всё из Базового +</li>
-                            <li>Индивидуальные доработки</li>
-                            <li>Форма онлайн-записи</li>
-                            <li>Подключение аналитики</li>
-                        </ul>
-                        <button class="cta-button">Выбрать</button>
-                    </div>
+                <div class="hero-content">
+                    <h1 class="digital-title">
+                        <span class="title-line neon-orange">Отзывы</span>
+                    </h1>
+                    <!-- Остальное содержимое reviews.html -->
                 </div>
             </main>
         </div>
     </div>
+
+    <script src="{{ url_for('static', filename='js/matrix.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/parallax.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                const spans = this.querySelectorAll('span');
+                spans[0].style.transform = mobileMenu.classList.contains('active') ? 'rotate(45deg) translate(8px, 8px)' : 'none';
+                spans[1].style.opacity = mobileMenu.classList.contains('active') ? '0' : '1';
+                spans[2].style.transform = mobileMenu.classList.contains('active') ? 'rotate(-45deg) translate(8px, -8px)' : 'none';
+            });
+        }
+    });
+    </script>
 </body>
 </html>

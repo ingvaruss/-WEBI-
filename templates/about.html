@@ -1,14 +1,13 @@
+cat > templates/about.html << 'EOF'
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Digital Universe</title>
+    <title>О нас - WEBI-future</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
 </head>
 <body>
-    <!-- Вертикальный матричный дождь на всех страницах -->
     <div class="matrix-bg"></div>
     <div class="code-background"></div>
     
@@ -20,58 +19,48 @@
             <nav class="digital-nav">
                 <a href="{{ url_for('index') }}" class="nav-link">Главная</a>
                 <a href="{{ url_for('about') }}" class="nav-link active">О нас</a>
-                <a href="{{ url_for('projects') }}" class="nav-link ">Проекты</a>
-                <a href="{{ url_for('contact') }}" class="nav-link ">Контакты</a>
+                <a href="{{ url_for('projects') }}" class="nav-link">Проекты</a>
+                <a href="{{ url_for('contact') }}" class="nav-link">Контакты</a>
             </nav>
+
+            <!-- Гамбургер-меню для мобильных -->
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="{{ url_for('index') }}" class="mobile-nav-link">Главная</a>
+                <a href="{{ url_for('about') }}" class="mobile-nav-link active">О нас</a>
+                <a href="{{ url_for('projects') }}" class="mobile-nav-link">Проекты</a>
+                <a href="{{ url_for('contact') }}" class="mobile-nav-link">Контакты</a>
+            </div>
         </header>
 
         <div class="main-content">
             <main class="hero-section">
                 <div class="hero-content">
                     <h1 class="digital-title">
-                        <span class="title-line accent">О нашей компании</span>
-                        
+                        <span class="title-line neon-orange">О нас</span>
                     </h1>
-                    <p class="digital-subtitle">
-                        Мы создаем инновационные digital-решения с 2018 года
-                    </p>
-                    
-                    <div class="cards-container">
-                        <div class="flip-card" onclick="flipCard(this)">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <div class="card-icon">⭐</div>
-                                    <h3>About</h3>
-                                    <p>Страница About</p>
-                                    <div class="card-tech">
-                                        <span>Feature 1</span>
-                                        <span>Feature 2</span>
-                                        <span>Feature 3</span>
-                                    </div>
-                                    <div class="card-hint">Click for details</div>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p class="digital-subtitle">
+                                WEBI future - это команда профессионалов, создающая цифровые решения для бизнеса любого масштаба.
+                            </p>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <h3>🚀 Инновации</h3>
+                                    <p>Используем современные технологии и подходы</p>
                                 </div>
-                                <div class="flip-card-back">
-                                    <h3>About Details</h3>
-                                    <div class="tech-details">
-                                        <div class="tech-item">
-                                            <span class="tech-name">Info 1</span>
-                                            <span class="tech-stack">Details here</span>
-                                        </div>
-                                        <div class="tech-item">
-                                            <span class="tech-name">Info 2</span>
-                                            <span class="tech-stack">More details</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-stats">
-                                        <div class="stat">
-                                            <span class="stat-number">100%</span>
-                                            <span class="stat-label">Quality</span>
-                                        </div>
-                                        <div class="stat">
-                                            <span class="stat-number">24/7</span>
-                                            <span class="stat-label">Support</span>
-                                        </div>
-                                    </div>
+                                <div class="feature-item">
+                                    <h3>💡 Опыт</h3>
+                                    <p>Более 5 лет в веб-разработке и дизайне</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h3>🔒 Надежность</h3>
+                                    <p>Гарантируем качество и своевременную delivery</p>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +72,24 @@
 
     <script src="{{ url_for('static', filename='js/matrix.js') }}"></script>
     <script src="{{ url_for('static', filename='js/parallax.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/cards.js') }}"></script>
     <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                const spans = this.querySelectorAll('span');
+                spans[0].style.transform = mobileMenu.classList.contains('active') ? 'rotate(45deg) translate(8px, 8px)' : 'none';
+                spans[1].style.opacity = mobileMenu.classList.contains('active') ? '0' : '1';
+                spans[2].style.transform = mobileMenu.classList.contains('active') ? 'rotate(-45deg) translate(8px, -8px)' : 'none';
+            });
+        }
+    });
+    </script>
 </body>
 </html>
+EOF
