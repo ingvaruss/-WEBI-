@@ -1,13 +1,14 @@
-cat > templates/projects.html << 'EOF'
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Проекты - WEBI-future</title>
+    <title>Projects - Digital Universe</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
 </head>
 <body>
+    <!-- Вертикальный матричный дождь на всех страницах -->
     <div class="matrix-bg"></div>
     <div class="code-background"></div>
     
@@ -18,9 +19,9 @@ cat > templates/projects.html << 'EOF'
             </div>
             <nav class="digital-nav">
                 <a href="{{ url_for('index') }}" class="nav-link">Главная</a>
-                <a href="{{ url_for('about') }}" class="nav-link">О нас</a>
+                <a href="{{ url_for('about') }}" class="nav-link ">О нас</a>
                 <a href="{{ url_for('projects') }}" class="nav-link active">Проекты</a>
-                <a href="{{ url_for('contact') }}" class="nav-link">Контакты</a>
+                <a href="{{ url_for('contact') }}" class="nav-link ">Контакты</a>
             </nav>
 
             <!-- Гамбургер-меню для мобильных -->
@@ -42,24 +43,50 @@ cat > templates/projects.html << 'EOF'
             <main class="hero-section">
                 <div class="hero-content">
                     <h1 class="digital-title">
-                        <span class="title-line neon-orange">Наши проекты</span>
+                        <span class="title-line accent">Наши проекты</span>
+                        
                     </h1>
-                    <div class="projects-content">
-                        <div class="projects-grid">
-                            <div class="project-item">
-                                <h3>Корпоративный сайт</h3>
-                                <p>Разработка современного корпоративного портала</p>
-                                <span class="project-tech">HTML5, CSS3, JavaScript</span>
-                            </div>
-                            <div class="project-item">
-                                <h3>Интернет-магазин</h3>
-                                <p>Электронная коммерция с системой управления</p>
-                                <span class="project-tech">Python, Flask, PostgreSQL</span>
-                            </div>
-                            <div class="project-item">
-                                <h3>Мобильное приложение</h3>
-                                <p>Кроссплатформенное решение для iOS и Android</p>
-                                <span class="project-tech">React Native, Node.js</span>
+                    <p class="digital-subtitle">
+                        Реализованные решения, которые меняют digital-ландшафт
+                    </p>
+                    
+                    <div class="cards-container">
+                        <div class="flip-card" onclick="flipCard(this)">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="card-icon">⭐</div>
+                                    <h3>Projects</h3>
+                                    <p>Страница Projects</p>
+                                    <div class="card-tech">
+                                        <span>Feature 1</span>
+                                        <span>Feature 2</span>
+                                        <span>Feature 3</span>
+                                    </div>
+                                    <div class="card-hint">Click for details</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Projects Details</h3>
+                                    <div class="tech-details">
+                                        <div class="tech-item">
+                                            <span class="tech-name">Info 1</span>
+                                            <span class="tech-stack">Details here</span>
+                                        </div>
+                                        <div class="tech-item">
+                                            <span class="tech-name">Info 2</span>
+                                            <span class="tech-stack">More details</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-stats">
+                                        <div class="stat">
+                                            <span class="stat-number">100%</span>
+                                            <span class="stat-label">Quality</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-number">24/7</span>
+                                            <span class="stat-label">Support</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -70,8 +97,10 @@ cat > templates/projects.html << 'EOF'
 
     <script src="{{ url_for('static', filename='js/matrix.js') }}"></script>
     <script src="{{ url_for('static', filename='js/parallax.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cards.js') }}"></script>
     <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
 
+    <!-- Скрипт для мобильного меню -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -90,4 +119,3 @@ cat > templates/projects.html << 'EOF'
     </script>
 </body>
 </html>
-EOF

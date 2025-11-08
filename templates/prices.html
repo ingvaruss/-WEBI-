@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Отзывы - WEBI-future</title>
+    <title>Цены - WEBI-future</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
 </head>
 <body>
+    <!-- Вертикальный матричный дождь на всех страницах -->
     <div class="matrix-bg"></div>
     <div class="code-background"></div>
     
@@ -20,6 +22,8 @@
                 <a href="{{ url_for('about') }}" class="nav-link">О нас</a>
                 <a href="{{ url_for('projects') }}" class="nav-link">Проекты</a>
                 <a href="{{ url_for('contact') }}" class="nav-link">Контакты</a>
+                <a href="{{ url_for('prices') }}" class="nav-link active">Цены</a>
+                <a href="{{ url_for('reviews') }}" class="nav-link">Отзывы</a>
             </nav>
 
             <!-- Гамбургер-меню для мобильных -->
@@ -34,6 +38,8 @@
                 <a href="{{ url_for('about') }}" class="mobile-nav-link">О нас</a>
                 <a href="{{ url_for('projects') }}" class="mobile-nav-link">Проекты</a>
                 <a href="{{ url_for('contact') }}" class="mobile-nav-link">Контакты</a>
+                <a href="{{ url_for('prices') }}" class="mobile-nav-link active">Цены</a>
+                <a href="{{ url_for('reviews') }}" class="mobile-nav-link">Отзывы</a>
             </div>
         </header>
 
@@ -41,9 +47,34 @@
             <main class="hero-section">
                 <div class="hero-content">
                     <h1 class="digital-title">
-                        <span class="title-line neon-orange">Отзывы</span>
+                        <span class="title-line accent">Прозрачные цены</span>
                     </h1>
-                    <!-- Остальное содержимое reviews.html -->
+                    
+                    <div class="pricing-container">
+                        <div class="price-card">
+                            <h3>БАЗОВЫЙ</h3>
+                            <div class="price">15 000 руб.</div>
+                            <ul>
+                                <li>Готовый шаблон "Сайт-Локаль"</li>
+                                <li>7 основных блоков</li>
+                                <li>Наполнение вашим контентом</li>
+                                <li>Домен и хостинг на 1 год</li>
+                            </ul>
+                            <button class="cta-button">Выбрать</button>
+                        </div>
+                        
+                        <div class="price-card featured">
+                            <h3>ПРОФ</h3>
+                            <div class="price">25 000 руб.</div>
+                            <ul>
+                                <li>Всё из Базового +</li>
+                                <li>Индивидуальные доработки</li>
+                                <li>Форма онлайн-записи</li>
+                                <li>Подключение аналитики</li>
+                            </ul>
+                            <button class="cta-button">Выбрать</button>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
@@ -51,8 +82,10 @@
 
     <script src="{{ url_for('static', filename='js/matrix.js') }}"></script>
     <script src="{{ url_for('static', filename='js/parallax.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cards.js') }}"></script>
     <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
 
+    <!-- Скрипт для мобильного меню -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');

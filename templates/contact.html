@@ -1,13 +1,14 @@
-cat > templates/contact.html << 'EOF'
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты - WEBI-future</title>
+    <title>Contact - Digital Universe</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
 </head>
 <body>
+    <!-- Вертикальный матричный дождь на всех страницах -->
     <div class="matrix-bg"></div>
     <div class="code-background"></div>
     
@@ -18,8 +19,8 @@ cat > templates/contact.html << 'EOF'
             </div>
             <nav class="digital-nav">
                 <a href="{{ url_for('index') }}" class="nav-link">Главная</a>
-                <a href="{{ url_for('about') }}" class="nav-link">О нас</a>
-                <a href="{{ url_for('projects') }}" class="nav-link">Проекты</a>
+                <a href="{{ url_for('about') }}" class="nav-link ">О нас</a>
+                <a href="{{ url_for('projects') }}" class="nav-link ">Проекты</a>
                 <a href="{{ url_for('contact') }}" class="nav-link active">Контакты</a>
             </nav>
 
@@ -42,25 +43,50 @@ cat > templates/contact.html << 'EOF'
             <main class="hero-section">
                 <div class="hero-content">
                     <h1 class="digital-title">
-                        <span class="title-line neon-orange">Контакты</span>
+                        <span class="title-line accent">Наши контакты</span>
+                        
                     </h1>
-                    <div class="contact-content">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <h3>📧 Email</h3>
-                                <p>webifuture@mail.ru</p>
-                            </div>
-                            <div class="contact-item">
-                                <h3>📱 Телефон</h3>
-                                <p>+7 (XXX) XXX-XX-XX</p>
-                            </div>
-                            <div class="contact-item">
-                                <h3>📍 Адрес</h3>
-                                <p>Москва, Россия</p>
-                            </div>
-                            <div class="contact-item">
-                                <h3>🕒 Режим работы</h3>
-                                <p>Пн-Пт: 9:00 - 18:00</p>
+                    <p class="digital-subtitle">
+                        Свяжитесь с нами для обсуждения вашего проекта
+                    </p>
+                    
+                    <div class="cards-container">
+                        <div class="flip-card" onclick="flipCard(this)">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="card-icon">⭐</div>
+                                    <h3>Contact</h3>
+                                    <p>Страница Contact</p>
+                                    <div class="card-tech">
+                                        <span>Feature 1</span>
+                                        <span>Feature 2</span>
+                                        <span>Feature 3</span>
+                                    </div>
+                                    <div class="card-hint">Click for details</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Contact Details</h3>
+                                    <div class="tech-details">
+                                        <div class="tech-item">
+                                            <span class="tech-name">Info 1</span>
+                                            <span class="tech-stack">Details here</span>
+                                        </div>
+                                        <div class="tech-item">
+                                            <span class="tech-name">Info 2</span>
+                                            <span class="tech-stack">More details</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-stats">
+                                        <div class="stat">
+                                            <span class="stat-number">100%</span>
+                                            <span class="stat-label">Quality</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-number">24/7</span>
+                                            <span class="stat-label">Support</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -71,8 +97,10 @@ cat > templates/contact.html << 'EOF'
 
     <script src="{{ url_for('static', filename='js/matrix.js') }}"></script>
     <script src="{{ url_for('static', filename='js/parallax.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cards.js') }}"></script>
     <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
 
+    <!-- Скрипт для мобильного меню -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -91,4 +119,3 @@ cat > templates/contact.html << 'EOF'
     </script>
 </body>
 </html>
-EOF
