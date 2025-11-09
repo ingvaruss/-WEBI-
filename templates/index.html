@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -27,6 +26,20 @@
                 <a href="{{ url_for('projects') }}" class="nav-link">Проекты</a>
                 <a href="{{ url_for('contact') }}" class="nav-link">Контакты</a>
             </nav>
+
+            <!-- Гамбургер-меню для мобильных -->
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="{{ url_for('index') }}" class="mobile-nav-link active">Главная</a>
+                <a href="{{ url_for('about') }}" class="mobile-nav-link">О нас</a>
+                <a href="{{ url_for('projects') }}" class="mobile-nav-link">Проекты</a>
+                <a href="{{ url_for('contact') }}" class="mobile-nav-link">Контакты</a>
+            </div>
         </header>
 
         <!-- Основной контент с легким параллаксом -->
@@ -192,9 +205,27 @@
     </div>
 
     <!-- ПОДКЛЮЧАЕМ СКРИПТЫ -->
-    <script src="{{ url_for('static', filename='js/matrix.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/matrix-fast.js') }}"></script>
     <script src="{{ url_for('static', filename='js/parallax.js') }}"></script>
     <script src="{{ url_for('static', filename='js/cards.js') }}"></script>
     <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+    <!-- Скрипт для мобильного меню -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                const spans = this.querySelectorAll('span');
+                spans[0].style.transform = mobileMenu.classList.contains('active') ? 'rotate(45deg) translate(8px, 8px)' : 'none';
+                spans[1].style.opacity = mobileMenu.classList.contains('active') ? '0' : '1';
+                spans[2].style.transform = mobileMenu.classList.contains('active') ? 'rotate(-45deg) translate(8px, -8px)' : 'none';
+            });
+        }
+    });
+    </script>
 </body>
 </html>

@@ -287,3 +287,103 @@ h1.digital-title .title-line.neon-orange {
         text-shadow: 0 0 15px #ff9900, 0 0 25px #ff9900, 0 0 35px #ff9900, 0 0 45px #ff9900, 0 0 55px #ff9900;
     }
 }
+
+/* Мобильная адаптация шапки */
+@media (max-width: 768px) {
+    .digital-header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .logo {
+        font-size: 1.5em;
+    }
+
+    .digital-nav {
+        display: none;
+    }
+
+    /* Стили гамбургер-кнопки */
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        width: 30px;
+        height: 24px;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1001;
+    }
+
+    .mobile-menu-btn span {
+        background: #00ff9d;
+        height: 3px;
+        margin: 3px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+        transform-origin: center;
+    }
+
+    /* Мобильное меню */
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 20, 10, 0.98);
+        padding: 20px 0;
+        box-shadow: 0 5px 15px rgba(0,255,157,0.3);
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    }
+
+    .mobile-menu.active {
+        display: block;
+        animation: slideDown 0.3s ease;
+    }
+
+    .mobile-nav-link {
+        display: block;
+        color: #00ff9d;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0,255,157,0.1);
+        font-size: 1.1em;
+        transition: background 0.3s;
+    }
+
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+        background: rgba(0,255,157,0.1);
+    }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.3em;
+    }
+
+    .digital-header {
+        padding: 12px 15px;
+    }
+
+    .mobile-menu-btn {
+        right: 15px;
+        top: 15px;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
