@@ -387,3 +387,14 @@ h1.digital-title .title-line.neon-orange {
         transform: translateY(0);
     }
 }
+
+/* Стили для маскота */
+.mascot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00ff88;
+    margin-right: 10px;
+    vertical-align: middle;
+}
